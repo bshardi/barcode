@@ -1,0 +1,45 @@
+<HTML>
+<head>
+	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="scanconsole.css">
+
+	<title>Barcode Scan Console</title>
+</head>
+
+<body>
+
+	<h1>Hello and welcome to the barcode scan console</h1>
+
+	<div id="addUserForm" style="margin: 25px;">
+		<div class="form-inline">
+			<div class="form-group">
+				<label for="firstName">First Name</label>
+				<input type="text" class="form-control" id="firstName" placeholder="First Name">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last Name</label>
+				<input type="text" class="form-control" id="lastName" placeholder="Last Name">
+			</div>
+			<button id="addButton" type="button" class="btn btn-default">Add</button>
+		</div>
+		<button id="startScanningButton" type="button" class="btn btn-default">Start Scanning</button>
+	</div>
+	
+	<div id ="scanUserForm" style="margin: 25px; display: none">
+		<div class="form-group" class="col-md-6">
+			<label for="scanValue">Enter code</label>
+			<input type="text" class="form-control" id="scanValue" placeholder="Enter code">
+		</div>
+		<button id="addMembersButton" type="button" class="btn btn-default">Add Members</button>
+	</div>
+
+	<div id="userlist"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+<script src="jquery-barcode.js"></script>
+<script src="knockout-3.0.0.js"></script>
+<script src="scanconsole.js"></script>
+</body>
+
+</HTML>
