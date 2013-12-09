@@ -13,12 +13,14 @@ function makeUserList() {
 }
 
 function makeUserRow(user){
-	var userRow = $("<div/>").addClass("row");
-	var checkbox = $("<div/>").addClass("checkbox");
-	$("<input/>").attr("id", "checkbox_"+user.code).attr("type", "checkbox").appendTo(checkbox);
-	$(checkbox).appendTo(userRow);
-	$("<span/>").addClass("col-md-2").html(user.first + " " + user.last).appendTo(userRow);
-	$("<div/>").attr("id", "barcode_"+user.code).appendTo(userRow);
+	// read the HTML template from the web page
+	var rowTemplate = $("#row_template").html()
+
+	// render the HTML template. This replaces things like {{first}} in the first argument
+	// (the template) with the value of "first" on the second argument (the user model.)
+	var userRow = Mustache.render(rowTemplate, user);
+
+	// Add our newly rendered HTML to the user list
 	$(userRow).appendTo("#userlist").fadeIn();
 }
 

@@ -8,6 +8,16 @@
 
 <body>
 
+	<!-- We put this HTML inside a script tag so that we can read it from
+	javascript without worrying about the browser trying to display it. -->
+	<script id="row_template" type="mustache template">
+	<div class="row">
+		<div class="checkbox"><input id="checkbox_{{code}}" type="checkbox" /></div>
+		<span class="col-md-2">{{first}} {{last}}</span>
+		<div id="barcode_{{code}}"></div>
+	</div>
+	</script>
+
 	<h1>Hello and welcome to the barcode scan console</h1>
 
 	<div id="addUserForm" style="margin: 25px;">
@@ -36,6 +46,7 @@
 	<div id="userlist"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
 <script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
 <script src="jquery-barcode.js"></script>
 <script src="knockout-3.0.0.js"></script>
